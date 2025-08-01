@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    background-image: url(red-background-high-quality-free-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1f1f1f23;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow-y: auto;
+    & .title
+        {text-align: center;
+         text-shadow: #000000cc 3px 5px;
+         font-size: 2em;
+         margin-bottom: 5px;
+        }
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.season {
+    margin-bottom: 15px;
+    box-shadow: #000000cc 3px 7px 3px;
+}
+.season :hover{
+    transition: all 0.2s ease-in-out;
+}
+
+.season h3 {
+    cursor: pointer;
+    background-color: #8e2121;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+}
+.season h3:hover{
+    background-color: #3f1515;
+
+}
+
+.tempo{
+    transition: transform 0.2s ease-in-out;
+}
+
+.tempo:hover{
+    transform: scale(2);
+}
+.episodes {
+        max-height: 0;
+        overflow-y: scroll;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+        opacity: 0;
+    }
+
+.episodes.active {
+    max-height: 100px; /* suficiente para mostrar todos os botões */
+    opacity: 1;
+}
+
+.episodes button {
+    display: block;
+    background-color: #383838;
+    border: none;
+    color: white;
+    padding: 8px;
+    margin: 5px 0;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: #000000cc 3px 2px 3px;
+
+}
+
+.episodes button:hover {
+    background-color: #952727;
+}
+
+#titulo-episodio{
+    width: 90%;
+    margin-bottom: 7px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: #000000de 3px 3px 2px;
+}
+
+.player {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #18181898;
+    
+}
+
+iframe {
+    width: 90%;
+    height: 75%;
+    border: 1 solid #333;
+    border-radius: 10px;
+    /* position: relative;
+    bottom: 45px; */
+    background-image: url(imgs/wallpapper.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+#controls{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+
+    & h3{
+        margin: 0px;
+        position: relative;
+        bottom: 3px;
+    }
+}
+
+#controls button {
+    height: 30px;
+    background-color: #e50914; /* Cor vermelha vibrante */
+    color: rgb(227, 225, 225);
+    border: none;
+    padding: 5px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+}
+
+#controls button:hover {
+    background-color: #ff0a16; /* Cor mais clara ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de "levantar" */
+}
+
+#controls button:active {
+    background-color: #c40811; /* Cor mais escura ao clicar */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+/* Scroll Bar */
+/* Para o scrollbar completo */
+::-webkit-scrollbar {
+    width: 5px; /* Largura da barra de rolagem vertical */
+    height: 10px; /* Altura da barra de rolagem horizontal */
+}
+
+/* O "fundo" da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: #a34848; /* Cor de fundo da trilha */
+    border-radius: 5px; /* Borda arredondada para a trilha */
+}
+
+/* O "arrastador" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Cor do "arrastador" */
+    border-radius: 5px; /* Borda arredondada para o "arrastador" */
+}
+
+/* Quando o mouse passa por cima do "arrastador" */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do "arrastador" ao passar o mouse */
+}
+
+.poster {
+    max-width: 250px;
+    height: 320px;
+
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+
+
+#card-area{
+    padding: 50px 0;
+}
+.box-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.box {
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
+.box img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.overlay {
+	width: 100%;
+	height: 0;
+	background: linear-gradient(transparent,#460101ba 58%);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: left;
+	font-size: 14px;
+	transition: height 0.5s;
+}
+.overlay h3 {
+    text-align: left;
+	font-weight: 500;
+	margin-bottom: 1px;
+	margin-top: 60%;
+	font-family: 'Arial', sans-serif;
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.overlay > p {
+    margin: 0;
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 5px;
+    height: 150px;
+    text-align: left;
+    overflow-y: scroll;
+
+}
+.box:hover img{
+    transform: scale(1.1);
+}
+.box:hover .overlay{
+    height: 100%;
+}
+
+#hbposter{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+#hbposter.fade-out {
+    opacity: 0;
+}
+
+
+@media (max-width: 500px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: auto;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    .top-area {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 10px;
+        gap: 10px;
+        width: 100%;
+        order: 2;
+    }
+    .sidebar {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        background-color: #12121200;
+
+        & .title{
+            margin-right: 100px;
+        }
+    }
+
+    .season { 
+        width: 40vw;
+        margin-bottom: 15px;
+    }
+
+    #poster{
+        position: relative;
+        width: 45vw;
+        height: 280px;
+        top: 55px;
+        right: 30px;
+        background-color: #121212;
+        border-radius: 10px;
+        
+        
+        & .box{
+            height: 280px;
+            background-color: black;
+            width: 45vw;
+        }
+        & img{
+            position: relative;
+            width: 100%;
+            height: 280px;
+        }
+    }
+
+    .player {
+        width: 95vw;
+        padding: 10px;
+        order: 1;
+        background-color: #ffffff04;
+        max-height: fit-content;
+    }
+
+    iframe {
+        width: 100%;
+        height: 200px;
+    }
+
+    #controls {
+        flex-direction: row;
+    }
+
+    .episodes.active{
+        max-height: 150px;
+    }
+}

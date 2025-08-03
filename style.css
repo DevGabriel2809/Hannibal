@@ -280,8 +280,8 @@ iframe {
     body {
         display: flex;
         flex-direction: column;
-        height: 99dvh;
-        width: 99vw;
+        height: 100dvh;
+        width: 100dvw;
         background-size: cover;
         overflow-x: hidden;
     }
@@ -364,6 +364,7 @@ iframe {
 
     body{
         height: 100dvh;
+        width: 100dvw;
     }
     #poster{
         display: none;

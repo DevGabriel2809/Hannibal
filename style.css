@@ -280,7 +280,7 @@ iframe {
         display: flex;
         flex-direction: column;
         height: 100vh;
-        width: auto;
+        /* width: auto; */
         background-size: cover;
         overflow-x: hidden;
     }

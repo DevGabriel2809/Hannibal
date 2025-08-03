@@ -276,11 +276,12 @@ iframe {
 
 
 @media (max-width: 500px) {
+    
     body {
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        /* width: auto; */
+        height: 99vh;
+        width: 99vw;
         background-size: cover;
         overflow-x: hidden;
     }

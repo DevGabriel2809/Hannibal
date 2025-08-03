@@ -335,15 +335,17 @@ iframe {
     }
 
     .player {
-        width: 95vw;
-        padding: 10px;
+        width: 100%;
         order: 1;
         background-color: #ffffff04;
         max-height: fit-content;
+        box-shadow: black 0px 5px 12px 4px;
+        border-bottom: #5b0808 1.7px solid;
+        padding-bottom: 5px;
     }
 
     iframe {
-        width: 100%;
+        width: 97%;
         height: 200px;
     }
 
